@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 55px); /* Number of columns */
+            gap: 5px; /* Space between fields */
+            margin: 20px auto;
+            width: fit-content;
+        }
+
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            grid-gap: 5px;
+            margin: 20px auto;
+            width: fit-content;
+        }
+
+        .key {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #999;
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            user-select: none;
+        }
+         /*Key Colors */
+         {% if keyboard_colors %}
+                {% for key, color in keyboard_colors.items() %}
+                  .key[value="{{key}}"]{
+                      background-color: {{ color }};
+                  }
+
+                {% endfor %}
+
+             {% endif %}
+
+        .key:hover {
+            background-color: #ddd;
+        }
+
+        .key.space {
+            width: 120px;
+        }
+
+        .key.enter {
+            width: 80px;
+        }
+
+        .key.backspace {
+            width: 80px;
+            font-size: 0.8em;
+        }
+    </style>
+        <script>
+        document.addEventListener('keydown', function(event) {
+            const key = event.key.toUpperCase(); // Get key pressed
+            const validKeys = "QWERTYUIOPASDFGHJKLZXCVBNM"; // Keys to allow
+            if (validKeys.includes(key)) { // Allow characters from keyboard
+                document.querySelector('button[name="key"][value="' + key + '"]').click(); //Click the button and do the logic.
+            }
+            if (event.key === 'Enter' || event.keyCode === 13) {
+                document.querySelector('button[name="key"][value="Enter"]').click(); //Click the button and do the logic.
+            }
+        });
+    </script>
+
+</head>
+<body>
+
+    <h1>Wordle</h1>
+    <!--<p>Secret Word: {{ secret_word }}</p>-->
+    <form method="POST">
+        <input type="hidden" name="active_row" value="{{ active_row }}">
+        <input type="hidden" name="active_col" value="{{ active_col }}">
+
+        <div class="grid-container">
+            {% for r in range(rows) %}
+                {% for c in range(cols) %}
+                    <input type="text" name="text_field_{{r}}_{{c}}" value="{{ text_fields[r][c] }}" maxlength="1" readonly style="background-color: {{ field_colors[r][c] }};">
+                    <input type="hidden" name="field_color_{{r}}_{{c}}" value="{{ field_colors[r][c] }}">
+
+                {% endfor %}
+            {% endfor %}
+        </div>
+
+        <div class="keyboard">
+            <button type="submit" name="key" value="Q" class="key">Q</button>
+            <button type="submit" name="key" value="W" class="key">W</button>
+            <button type="submit" name="key" value="E" class="key">E</button>
+            <button type="submit" name="key" value="R" class="key">R</button>
+            <button type="submit" name="key" value="T" class="key">T</button>
+            <button type="submit" name="key" value="Y" class="key">Y</button>
+            <button type="submit" name="key" value="U" class="key">U</button>
+            <button type="submit" name="key" value="I" class="key">I</button>
+            <button type="submit" name="key" value="O" class="key">O</button>
+            <button type="submit" name="key" value="P" class="key">P</button>
+            <button type="submit" name="key" value="A" class="key">A</button>
+            <button type="submit" name="key" value="S" class="key">S</button>
+            <button type="submit" name="key" value="D" class="key">D</button>
+            <button type="submit" name="key" value="F" class="key">F</button>
+            <button type="submit" name="key" value="G" class="key">G</button>
+            <button type="submit" name="key" value="H" class="key">H</button>
+            <button type="submit" name="key" value="J" class="key">J</button>
+            <button type="submit" name="key" value="K" class="key">K</button>
+            <button type="submit" name="key" value="L" class="key">L</button>
+            <button type="submit" name="key" value="Z" class="key">Z</button>
+            <button type="submit" name="key" value="NewWord" class="key backspace">New Word</button>
+            <br>
+            <button type="submit" name="key" value="X" class="key">X</button>
+            <button type="submit" name="key" value="C" class="key">C</button>
+            <button type="submit" name="key" value="V" class="key">V</button>
+            <button type="submit" name="key" value="B" class="key">B</button>
+            <button type="submit" name="key" value="N" class="key">N</button>
+            <button type="submit" name="key" value="M" class="key">M</button>
+            <!-- <button type="submit" name="key" value="Backspace" class="key backspace">Backspace</button>-->
+            <!-- <button type="submit" name="key" value="Space" class="key space">&nbsp;</button> -->
+            <button type="submit" name="key" value="Enter" class="key enter">Enter</button>
+            <br>
+
+        </div>
+    </form>
+
+</body>
+</html>
