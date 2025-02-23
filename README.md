@@ -1,1 +1,1 @@
-# Wordly_game
+# Wordle_game
