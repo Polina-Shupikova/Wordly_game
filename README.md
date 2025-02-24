@@ -10,6 +10,9 @@ Yellow – Correct letter in the incorrect spot
 Green – Correct letter in the correct spot
 
 Use these clues to get closer to the word of the day and eventually guess it within 6 tries! Keep in mind that there may be double letters in the word of the day. So, even if you have a green E, you may have another E hidden in the word that you haven’t guessed yet.
+# Installation
+start with installatin of librares 
+pip install random
 # Wordle_game
 File dictionary_english.txt contents 2000 words.
 If you want less words, you need reduce some words there.
