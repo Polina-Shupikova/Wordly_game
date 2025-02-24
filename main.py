@@ -71,7 +71,7 @@ def index():
     keyboard_colors = {}
 
     active_row = 0
-    active_col = 0
+    active_col = -1
     keyboard_colors = {}
 
     if request.method == 'POST':
@@ -102,8 +102,8 @@ def index():
 
         elif key_pressed == 'Chet':
             active_col = max(0,active_col)
-            letter = ANSWERS[active_col]
             if (active_col >= 0) & (active_col < COLS) & (active_row >= 0) & (active_row < ROWS):
+                letter = ANSWERS[active_col]
                 set_letter(letter, COLORS[1], active_row, active_col, keyboard_colors, text_fields, field_colors)
 
         elif key_pressed in VALID_KEYS:
