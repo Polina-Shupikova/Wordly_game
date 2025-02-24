@@ -106,7 +106,7 @@ def index():
                 letter = ANSWERS[active_col]
                 set_letter(letter, COLORS[1], active_row, active_col, keyboard_colors, text_fields, field_colors)
 
-        elif key_pressed in VALID_KEYS:
+        elif (key_pressed in VALID_KEYS) & (active_col >= -1) & (active_col < COLS) & (active_row >= 0) & (active_row < ROWS):
             active_col += 1
             if active_col == COLS:
                 active_col = 0
