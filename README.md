@@ -18,6 +18,7 @@ pip install random
 pip install flack
 ```
 Don't forget to add a dictionary_english.txt file, it contains a list of words that will be used for choosing a secret word
+File index.html need to be in template folder.
 # Additional information 
 File dictionary_english.txt contains 2000 words.
 If you want less words, you can cut some words out off there
@@ -26,3 +27,6 @@ Also you can uncomment line 93 in file Index.html
 <!--<p>Secret Word: {{ secret_word }}</p>-->
 ```
 to get a secret word
+
+# Additional feature
+If you want to guess word easily - press ;) button
