@@ -14,8 +14,7 @@ Use these clues to get closer to the word of the day and eventually guess it wit
 start with installatin of librares 
 ```
 pip install random
-```
-```
+
 pip install flack
 ```
 # Wordle_game
