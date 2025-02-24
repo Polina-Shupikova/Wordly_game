@@ -17,9 +17,12 @@ pip install random
 
 pip install flack
 ```
-# Wordle_game
+Don't forget to add a dictionary_english.txt file, it contains a list of words that will be used for choosing a secret word
+# Additional information 
 File dictionary_english.txt contents 2000 words.
-If you want less words, you need reduce some words there.
-Or you can uncomment line 93 
-in file Index.html <!--<p>Secret Word: {{ secret_word }}</p>-->
+If you want less words, you can cut some words out off there
+Also you can uncomment line 93 in file Index.html 
+```
+<!--<p>Secret Word: {{ secret_word }}</p>-->
+```
 to get a secret word
