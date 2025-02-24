@@ -65,11 +65,11 @@
         }
 
         .key.enter {
-            width: 80px;
+            width: 85px;
         }
 
         .key.backspace {
-            width: 80px;
+            width: 85px;
             font-size: 0.8em;
         }
     </style>
@@ -78,10 +78,13 @@
             const key = event.key.toUpperCase(); // Get key pressed
             const validKeys = "QWERTYUIOPASDFGHJKLZXCVBNM"; // Keys to allow
             if (validKeys.includes(key)) { // Allow characters from keyboard
-                document.querySelector('button[name="key"][value="' + key + '"]').click(); //Click the button and do the logic.
+                document.querySelector('button[name="key"][value="' + key + '"]').click();
             }
             if (event.key === 'Enter' || event.keyCode === 13) {
-                document.querySelector('button[name="key"][value="Enter"]').click(); //Click the button and do the logic.
+                document.querySelector('button[name="key"][value="Enter"]').click();
+            }
+            if (event.key === 'Chet' || event.keyCode === 32) {
+                document.querySelector('button[name="key"][value="Chet"]').click();
             }
         });
     </script>
@@ -135,9 +138,9 @@
             <button type="submit" name="key" value="N" class="key">N</button>
             <button type="submit" name="key" value="M" class="key">M</button>
             <!-- <button type="submit" name="key" value="Backspace" class="key backspace">Backspace</button>-->
-            <!-- <button type="submit" name="key" value="Space" class="key space">&nbsp;</button> -->
             <button type="submit" name="key" value="Enter" class="key enter">Enter</button>
             <br>
+            <button type="submit" name="key" value="Chet" class="key">;)</button>
 
         </div>
     </form>
