@@ -19,7 +19,7 @@ pip install flack
 ```
 Don't forget to add a dictionary_english.txt file, it contains a list of words that will be used for choosing a secret word
 # Additional information 
-File dictionary_english.txt contents 2000 words.
+File dictionary_english.txt contains 2000 words.
 If you want less words, you can cut some words out off there
 Also you can uncomment line 93 in file Index.html 
 ```
