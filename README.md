@@ -1,3 +1,4 @@
+#The rules
 The objective of the game is to guess the 5-letter word of the day in 6 tries or fewer. Think of a starter word – it can be any word as long as it is valid. Once you enter that first 5-letter word, the letters will be one of three colors:
 
 Gray – Incorrect letter
