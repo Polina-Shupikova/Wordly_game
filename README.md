@@ -29,4 +29,6 @@ Also you can uncomment line 93 in file Index.html
 to get a secret word
 
 # Additional feature
-If you want to guess word easily - press ;) button or space on keyboard and you get right letter on current position. Then you can continue to gess next letter
+You cant use "backspace", because you have seen the letter already.
+BUT...
+If you want to guess word easily - press ";) button" or "space" on keyboard and you get right letter on current position. Then you can continue to gess next letter. 
